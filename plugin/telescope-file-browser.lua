@@ -18,3 +18,6 @@ vim.api.nvim_set_keymap(
   ":Telescope file_browser",
   { noremap = true }
 )
+
+vim.api.nvim_set_keymap('n', '<leader>dd', '<cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })
+
