@@ -1,10 +1,3 @@
-set expandtab
-set smartindent
-set tabstop=8
-set shiftwidth=2 smarttab
-set nu
-set rnu
-
 " Install vim-plug if not found
 let data_dir = stdpath('data') . '/site'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -33,22 +26,27 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
-
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
 Plug 'b0o/schemastore.nvim'
 Plug 'christoomey/vim-tmux-navigator'
-
-
-Plug 'EdenEast/nightfox.nvim'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'folke/neodev.nvim'
 call plug#end()
 
-set completeopt=menu,menuone,noselect
 
 lua <<EOF
+  vim.opt.expandtab = true
+  vim.opt.smartindent = true
+  vim.opt.tabstop = 8
+  vim.opt.shiftwidth = 2
+  vim.opt.smarttab = true
+  vim.opt.nu = true
+  vim.opt.rnu = true
+  vim.opt.completeopt = 'menu,menuone,noselect'
   vim.keymap.set('t', '<C-w>h', "<C-\\><C-n>",{silent = true})
+
+  
+
   -- Set up nvim-cmp.
   local cmp = require'cmp'
 
